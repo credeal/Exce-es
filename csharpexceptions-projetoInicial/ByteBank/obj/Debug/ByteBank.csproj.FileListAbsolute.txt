@@ -1,0 +1,7 @@
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\bin\Debug\ByteBank.exe.config
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\bin\Debug\ByteBank.exe
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\bin\Debug\ByteBank.pdb
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.csprojAssemblyReference.cache
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.exe
+C:\Users\21145\Documents\Developer\C#\C-Sharp\POO\Exceções\csharpexceptions-projetoInicial\ByteBank\obj\Debug\ByteBank.pdb
