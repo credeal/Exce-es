@@ -61,10 +61,13 @@ namespace ByteBank
         #region Métodos
         public bool Sacar(double valor)
         {
+            if (valor < 0)
+                throw new ArgumentException("Valor inválido para o saque", nameof(valor));
+            
+
             if (_saldo < valor)
-            {
                 throw new SaldoInsuficienteException($"Você tentou sacar {valor} , porém seu saldo atual é de {_saldo}. Transação Inválida");
-            }
+            
 
             _saldo -= valor;
             return true;
@@ -76,16 +79,14 @@ namespace ByteBank
         }
 
 
-        public bool Transferir(double valor, ContaCorrente contaDestino)
+        public void Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (_saldo < valor)
-            {
-                return false;
-            }
+            if (valor < 0)
+                throw new ArgumentException("Valor inválido para a transferência", nameof(valor));
 
-            _saldo -= valor;
+            Sacar(valor);
             contaDestino.Depositar(valor);
-            return true;
+         
         }
         #endregion
     }
