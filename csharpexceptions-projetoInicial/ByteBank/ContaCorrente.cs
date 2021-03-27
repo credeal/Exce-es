@@ -1,5 +1,6 @@
 ﻿// using _05_ByteBank;
 
+using ByteBank.Exceções;
 using System;
 
 namespace ByteBank
@@ -51,8 +52,9 @@ namespace ByteBank
             Agencia = agencia;
             Numero = numero;
 
-            TaxaOperacao = 30 / TotalDeContasCriadas;
             TotalDeContasCriadas++;
+            TaxaOperacao = 30 / TotalDeContasCriadas;
+
         }
 
 
@@ -61,7 +63,7 @@ namespace ByteBank
         {
             if (_saldo < valor)
             {
-                return false;
+                throw new SaldoInsuficienteException($"Você tentou sacar {valor} , porém seu saldo atual é de {_saldo}. Transação Inválida");
             }
 
             _saldo -= valor;
