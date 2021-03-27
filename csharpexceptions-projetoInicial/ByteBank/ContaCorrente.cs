@@ -1,34 +1,24 @@
 ﻿// using _05_ByteBank;
 
+using System;
+
 namespace ByteBank
 {
     public class ContaCorrente
     {
+        private double _saldo = 100;
+
+        public static double TaxaOperacao { get; set; }
+
         public Cliente Titular { get; set; }
 
         public static int TotalDeContasCriadas { get; private set; }
 
+        #region Propriedades
 
-        private int _agencia;
-        public int Agencia
-        {
-            get
-            {
-                return _agencia;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    return;
-                }
+        public int Agencia { get; }
 
-                _agencia = value;
-            }
-        }
-        public int Numero { get; set; }
-
-        private double _saldo = 100;
+        public int Numero { get; }
 
         public double Saldo
         {
@@ -46,17 +36,27 @@ namespace ByteBank
                 _saldo = value;
             }
         }
+        #endregion
 
 
         public ContaCorrente(int agencia, int numero)
         {
+            if(agencia <= 0 )//nameOf é uma boa prática para evitar que caso mude o nome do parametro ele mande mudar aqui
+                throw new ArgumentException("O argumento Agência deve ser maior que 0. ", nameof(agencia));
+            
+            if(numero <= 0)
+                throw new ArgumentException("O argumento Número deve ser maior que 0. ",nameof(numero));
+
+
             Agencia = agencia;
             Numero = numero;
 
+            TaxaOperacao = 30 / TotalDeContasCriadas;
             TotalDeContasCriadas++;
         }
 
 
+        #region Métodos
         public bool Sacar(double valor)
         {
             if (_saldo < valor)
@@ -85,5 +85,6 @@ namespace ByteBank
             contaDestino.Depositar(valor);
             return true;
         }
+        #endregion
     }
 }
